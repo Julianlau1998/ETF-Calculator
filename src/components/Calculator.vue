@@ -93,7 +93,7 @@ export default {
         endCapital () {
             this.capitalArray = []
             this.yearsArray = []
-            if (this.startCapital > 5000000 || this.monthly > 7000 || this.years > 200 || this.interest > 70) {
+            if (this.startCapital > 5000000 || this.monthly > 10000 || this.years > 200 || this.interest > 70) {
                 this.$emit('change', {
                     capitalArray: this.capitalArray,
                     yearsArray: this.yearsArray
