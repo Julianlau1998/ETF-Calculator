@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+      <topNav />
+      <div class="columns mt-4 is-vcentered">
+        <calculator
+          class="column is-6"
+          @change="createChart"
+        />
+        <chart 
+          class="column is-6"
+          :key="capitalArray[capitalArray.length -1]"
+          :capitalArray="capitalArray"
+          :yearsArray="yearsArray"
+        />
+      </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import topNav from '@/components/TopNav.vue'
+import calculator from '@/components/Calculator.vue'
+import chart from '@/components/Chart.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+    components: {
+      topNav,
+      calculator,
+      chart
+    },
+    data () {
+        return {
+            startCapital: 0,
+            capitalArray: [],
+            yearsArray: []
+        }
+    },
+    methods: {
+      createChart (data) {  
+        this.capitalArray = []
+        this.capitalArray = data.capitalArray
+        this.yearsArray = data.yearsArray
+      }
+    }
 }
+
 </script>
