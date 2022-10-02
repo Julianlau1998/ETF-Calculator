@@ -1,13 +1,13 @@
 <template>
   <div>
       <topNav />
-      <div class="columns mt-4 is-vcentered">
+      <div class="columns mt-4 is-vcentered is-desktop">
         <calculator
-          class="column is-6"
+          class="column is-6-desktop"
           @change="createChart"
         />
         <chart 
-          class="column is-6"
+          class="column is-6-desktop"
           :key="capitalArray[capitalArray.length -1]"
           :capitalArray="capitalArray"
           :yearsArray="yearsArray"
