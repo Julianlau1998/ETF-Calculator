@@ -1,7 +1,7 @@
 <template>
   <div>
       <topNav />
-      <div class="columns mt-4 is-vcentered">
+      <div class="columns mt-4 is-vcentered is-desktop">
         <calculator
           class="column is-6"
           @change="createChart"
