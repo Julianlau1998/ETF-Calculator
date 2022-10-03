@@ -3,7 +3,7 @@
       <topNav />
       <div class="columns mt-4 is-vcentered is-desktop">
         <calculator
-          class="column is-6-desktop"
+          class="column is-6-desktop mt-4"
           @change="createChart"
         />
         <chart 
