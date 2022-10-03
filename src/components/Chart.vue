@@ -36,6 +36,9 @@ export default {
                     zoom: {
                         enabled: false
                     },
+                    toolbar: {
+                        show: false
+                    },
                     foreColor: '#cbe5ff',
                     animations: {
                         enabled: true,
