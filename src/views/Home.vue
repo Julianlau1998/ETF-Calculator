@@ -1,6 +1,5 @@
 <template>
   <div>
-      <topNav />
       <div class="columns mt-4 is-vcentered is-desktop">
         <calculator
           class="column is-6-desktop mt-4"
@@ -17,13 +16,11 @@
 </template>
 
 <script>
-import topNav from '@/components/TopNav.vue'
 import calculator from '@/components/Calculator.vue'
 import chart from '@/components/Chart.vue'
 
 export default {
     components: {
-      topNav,
       calculator,
       chart
     },

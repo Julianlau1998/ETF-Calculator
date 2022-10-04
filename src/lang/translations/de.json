@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Einstellungen",
+    "currency": "Währung:",
+    "currencies": {
+      "pound": "£ Pfund Sterling",
+      "euro": "€ Euro",
+      "dollar": "$ Dollar"
+    },
+    "language": "Sprache:",
+    "languages": {
+      "german": "Deutsch",
+      "english": "Englisch"
+    },
+    "home": "Zurück"
+  },
+  "calculator": {
+    "start": "Startkapital",
+    "monthly": "Monatliche Sparrate",
+    "years": "Laufzeit (Jahre)",
+    "yearly": "Jährlicher Zinssatz",
+    "final": "Endkapital",
+    "growth": "Kapital Wachstum"
+  }
+}

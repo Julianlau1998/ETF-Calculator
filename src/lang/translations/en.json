@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Settings",
+    "currency": "Currency:",
+    "currencies": {
+      "pound": "£ Pound Sterling",
+      "euro": "€ Euro",
+      "dollar": "$ Dollar"
+    },
+    "language": "Language:",
+    "languages": {
+      "german": "German",
+      "english": "English"
+    },
+    "home": "Home"
+  },
+  "calculator": {
+    "start": "Start Capital",
+    "monthly": "Monthly Payment",
+    "years": "Years",
+    "yearly": "Yearly Interest Rate",
+    "final": "Final Capital",
+    "growth": "Capital growth"
+  }
+}

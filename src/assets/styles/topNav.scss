@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .is-topnav {
-    width: 99.8vw;
+    width: 99.7vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,22 +14,26 @@
 
 .settingsWrapper {
     position: absolute;
-    top: 1.1rem;
-    right: 2rem;
+    top: 0.4rem;
+    right: 1rem;
 }
 
 .settings {
     cursor: pointer;
     font-size: 1.3rem;
-    width: 8rem;
+    width: 8.3rem;
     border: 1px solid $secondary;
     padding: 8px 7px 7px 8px;
     border-radius: 5px;
     background: $secondBackground;
     position: absolute;
-    right: 1rem;
-    top: 2rem;
+    right: 2.6rem;
+    top: 3rem;
     font-size: 1.5rem;
+}
+
+.is-smallIcon {
+    font-size: 1rem;
 }
 
 .is-playBillingSetting {

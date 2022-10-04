@@ -61,7 +61,7 @@ export default {
                     curve: 'straight'
                 },
                 title: {
-                    text: 'Capital Growth',
+                    text: this.$t('calculator.growth'),
                     align: 'left'
                     },
                     grid: {

@@ -1,7 +1,7 @@
 <template>
     <div class="is-topnav has-text-left p-3 pb-4 pt-4">
         <div class="columns is-mobile">
-            <div class="column ml-4 is-pointer">
+            <div class="column pl-5 is-pointer">
                 <span @click="home">
                     ETF-Caculator
                 </span>
@@ -9,24 +9,24 @@
             <div class="column settingsWrapper">
                 <div v-if="settings" class="settingsItems settings">
                     <span v-if="helpAvailable">
-                        <div class="hr" />
-                        <span @click="help" class="is-pointer mt-6 setting noselect">
+                        <span @click="openSettings" class="is-pointer mt-6 setting noselect">
+                            <i
+                                class="fas fa-wrench is-smallIcon"
+                                @click="settings=!settings"
+                            />
+                            Settings
+                        </span>
+                    </span>
+                    <!-- <div class="hr" />
+                    <span v-if="helpAvailable">
+                        <span @click="openHelp" class="is-pointer mt-6 setting noselect">
                             Help
                         </span>
-                    </span>
-                    <span v-if="playBillingSupported">
-                        <div class="hr" />
-                        <span
-                            @click="makePurchase()"
-                            class="is-pointer mt-6 setting noselect is-playBillingSetting"
-                        >
-                            Support the Developer
-                        </span>
-                    </span>
+                    </span> -->
                 </div>
                 <i
-                    v-if="helpAvailable || playBillingSupported"
-                    class="fas fa-ellipsis-v settings-icon is-pointer"
+                    v-if="helpAvailable"
+                    class="fas fa-bars settings-icon is-pointer"
                     @click="settings=!settings"
                 />
             </div>
@@ -60,13 +60,6 @@ export default {
         share () {
             this.$emit('share')
         },
-        fileInput (event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-            reader.onload = e => this.$emit('fileInput', e.target.result);
-            reader.readAsText(file);
-            this.settings = false
-        },
         async checkPlayBillingAvailable () {
             if ('getDigitalGoodsService' in window) {
                 const service = await window.getDigitalGoodsService('https://play.google.com/billing');
@@ -77,6 +70,10 @@ export default {
         },
         help () {
             this.$router.push('/help')
+        },
+        openSettings () {
+            this.$router.push('settings')
+            this.settings = false
         },
         home () {
             if (this.$route.path === '/') return

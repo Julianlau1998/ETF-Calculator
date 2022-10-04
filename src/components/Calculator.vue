@@ -2,7 +2,7 @@
   <div>
         <slider
             id="startCapital"
-            :label="'Start Capital'"
+            :label="`${$t('calculator.start')}${currency.length ? ` (${currency})` : ''}`"
             :initialValueProp="1000"
             :min="0"
             :max="5000000"
@@ -13,7 +13,7 @@
         <br>
         <slider
             id="monthly"
-            :label="'Monthly Payment'"
+            :label="`${$t('calculator.monthly')}${currency.length ? ` (${currency})` : ''}`"
             :initialValueProp="100"
             :min="0"
             :max="7000"
@@ -24,7 +24,7 @@
         <br>
         <slider
             id="years"
-            :label="'Years'"
+            :label="`${$t('calculator.years')}`"
             :initialValueProp="10"
             :min="1"
             :max="70"
@@ -35,7 +35,7 @@
         <br>
         <slider
             id="interest"
-            :label="'Yearly Interest Rate'"
+            :label="`${$t('calculator.yearly')} (%)`"
             :initialValueProp="5"
             :min="0"
             :max="50"
@@ -49,7 +49,7 @@
         <h1 class="title is-3 is-primary">
             Final Capital:
             <br>
-            <span class="is-fourth mt-6"> {{ endCapital }} </span>
+            <span class="is-fourth mt-6"> {{ endCapital }}{{currency}} </span>
         </h1>
   </div>
 </template>
@@ -73,6 +73,11 @@ export default {
     },
     created () {
         this.startCapital = 1000
+
+        const localCurrency = localStorage.getItem('currency')
+        if (localCurrency) {
+            this.currency = JSON.parse(localCurrency)
+        }
     },
     computed: {
         endCapital () {
