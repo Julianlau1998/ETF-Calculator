@@ -47,7 +47,7 @@
         <br>
         <br>
         <h1 class="title is-3 is-primary">
-            Final Capital:
+            {{ $t('calculator.final') }}:
             <br>
             <span class="is-fourth mt-6"> {{ endCapital }}{{currency}} </span>
         </h1>
