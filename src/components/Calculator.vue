@@ -68,7 +68,8 @@ export default {
             years: 10,
             interest: 5,
             capitalArray: [],
-            yearsArray: []
+            yearsArray: [],
+            currency: ''
         }
     },
     created () {
