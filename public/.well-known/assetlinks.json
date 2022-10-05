@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "app.netlify.etf_calculator.twa",
+                     "sha256_cert_fingerprints": ["60:05:B6:7E:B4:C1:21:9B:75:8B:CB:C0:54:29:FB:F9:55:F6:95:A3:F7:2A:E5:03:FA:D6:13:FD:8D:4E:1B:CC"] }
+      }
+]
