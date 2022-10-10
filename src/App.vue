@@ -37,8 +37,7 @@
     },
     watch: {
       selectedLanguage (val) {
-        this.$i18n.locale = val
-        localStorage.setItem('language', JSON.stringify(val))
+        if (val.length) this.$i18n.locale = val
       }
     }
   }
