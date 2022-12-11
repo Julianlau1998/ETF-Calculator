@@ -71,7 +71,7 @@ export default {
                     },
                 },
                 xaxis: {
-                    categories: this.YearsArray,
+                    categories: this.yearsArray,
                 }
             }
         }

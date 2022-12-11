@@ -32,10 +32,20 @@ export default {
         }
     },
     methods: {
-      createChart (data) {  
+      createChart (data) {
+        const yearsArray = []
+        if (data.yearsArray.length > 20) {
+          data.yearsArray.forEach((year, index) => {
+            if (index % 5 === 0) {
+              yearsArray.push(index)
+            } else {
+              yearsArray.push(' ')
+            }
+          })
+        }
         this.capitalArray = []
         this.capitalArray = data.capitalArray
-        this.yearsArray = data.yearsArray
+        this.yearsArray = yearsArray
       }
     }
 }
