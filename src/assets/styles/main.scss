@@ -33,7 +33,7 @@ body {
     background-color: $secondBackground;
     border: 2px solid $secondary;
     border-radius: 20px;
-    text-align: center; 
+    text-align: center;
     z-index: 11;
 }
 
@@ -87,7 +87,7 @@ select {
     padding: 0.5rem;
     cursor: pointer;
     margin: 0.5rem;
-    
+
     &.is-primary {
         background-color: $secondBackground;
         color: lightgray;
@@ -100,7 +100,7 @@ select {
     }
     &.home {
         padding-left: 1rem;
-        padding-right: 1rem; 
+        padding-right: 1rem;
         font-size: 1.2rem;
     }
 }
@@ -174,7 +174,7 @@ input[type=number] {
         cursor: pointer;
 
         /* Hides the slider so custom styles can be added */
-        background: transparent; 
+        background: transparent;
         border-color: transparent;
         color: transparent;
     }
@@ -202,7 +202,7 @@ input[type=number] {
         background: #ffffff;
         cursor: pointer;
     }
-    
+
     /* Background */
     input[type=range]::-webkit-slider-runnable-track {
         width: 100%;
@@ -211,6 +211,18 @@ input[type=number] {
         box-shadow: 2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
         border: 0.2px solid #010101;
     }
+
+.ad {
+    position: fixed;
+    bottom: 0rem;
+    height: 62px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border: 1px solid white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px #818181;
+}
 
 // transitions
 .fade-enter-active,
