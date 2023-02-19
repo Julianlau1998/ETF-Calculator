@@ -8,7 +8,7 @@
 
 <script>
   import topNav from '@/components/TopNav.vue'
-  import AdCard from "@/components/ads/AdCard";
+  import AdCard from "@/components/ads/AdCard"
   export default {
     components: {
       topNav,
