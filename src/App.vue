@@ -1,18 +1,15 @@
 <template>
   <div id="app">
     <topNav />
-    <AdCard v-if="!iOS" />
     <router-view/>
   </div>
 </template>
 
 <script>
   import topNav from '@/components/TopNav.vue'
-  import AdCard from "@/components/ads/AdCard"
   export default {
     components: {
-      topNav,
-      AdCard
+      topNav
     },
     data () {
       return {
