@@ -1,9 +1,10 @@
 <template>
   <div>
-      <div class="columns mt-4 is-vcentered is-desktop">
+      <div class="columns mt-4 is-desktop">
         <calculator
           class="column is-6-desktop mt-4"
           @change="createChart"
+          @addClick="addClick"
         />
         <chart 
           class="column is-6-desktop"
@@ -28,8 +29,20 @@ export default {
         return {
             startCapital: 0,
             capitalArray: [],
-            yearsArray: []
+            yearsArray: [],
+            clicks: 0
         }
+    },
+    created () {
+      this.clicks = parseInt(localStorage.getItem('clicks'))
+      if(this.clicks == null || isNaN(this.clicks)) {
+        this.clicks = 0
+      }
+    },
+    computed: {
+      iosLiteApp () {
+        return window.webkit && window.webkit.messageHandlers
+      }
     },
     methods: {
       createChart (data) {
@@ -46,6 +59,22 @@ export default {
         this.capitalArray = []
         this.capitalArray = data.capitalArray
         this.yearsArray = yearsArray
+      },
+      addClick () {
+        this.clicks += 1
+        localStorage.setItem('clicks', this.clicks)
+        if(this.clicks >= 8) {
+          this.showInterstitial()
+          localStorage.setItem('clicks', 0)
+          this.clicks = 0
+        }
+      },
+      showInterstitial () {
+        if (this.iosLiteApp) {
+          window.webkit.messageHandlers.showInterstitial.postMessage({
+            "message": 'showInterstitial'
+          })
+        }
       }
     }
 }

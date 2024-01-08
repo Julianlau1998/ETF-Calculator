@@ -103,6 +103,16 @@ select {
         padding-right: 1rem;
         font-size: 1.2rem;
     }
+    &.is-border-secondary {
+        background: transparent;
+        border: 2px solid $secondary;
+        color: $primary;
+    }
+    &.is-ads-button {
+        min-width: 10rem;
+        min-height: 3rem;
+        font-size: 1.1rem;
+    }
 }
 
 .button:hover {
@@ -212,10 +222,6 @@ input[type=number] {
         border: 0.2px solid #010101;
     }
 
-#chart {
-    margin-bottom: 8rem;
-}
-
 .ad {
     position: fixed;
     bottom: -0.5rem;
@@ -240,5 +246,9 @@ input[type=number] {
 @media (min-width: 769px) {
     body {
         padding: 0 5rem;
+    }
+    #chart {
+        position: relative;
+        top: 1rem;
     }
 }

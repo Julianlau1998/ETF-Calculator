@@ -11,6 +11,7 @@
             type="number"
             :min="min"
             :max="max"
+            @click="$emit('click')"
         />
         <!-- <br>
         <input

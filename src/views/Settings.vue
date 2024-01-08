@@ -1,6 +1,6 @@
 <template>
   <div class="settings-page">
-    <div class="is-settings-box">
+    <div class="is-settings-box pb-5">
         <h1 class="header is-size-2 is-size-3-mobile mt-5 mb-5">
             {{ $t('settings.title') }}
         </h1>
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="columns is-justify-content-center is-mobile is-align-items-center mb-6 mt-4">
+        <div class="columns is-justify-content-center is-mobile is-align-items-center mb-3 mt-4">
             <div class="column is-3-desktop is-4-tablet is-5-mobile">
                 <div class="is-size-4">
                     {{ $t('settings.language') }}
@@ -49,6 +49,13 @@
                 </select>
             </div>
         </div>
+        <button
+          v-if="iosLiteApp"
+          @click="openAppStorePage"
+          class="button is-ads-button is-border-secondary mt-4"
+        >
+          Get Rid Of Ads
+        </button>
     </div>
     <button @click="home" class="button is-primary is-home-button mt-6">
         {{ $t('settings.home') }}
@@ -64,6 +71,11 @@ export default {
             language: '',
             langs: ['English', 'German'],
             selectedLanguage: ''
+        }
+    },
+    computed: {
+        iosLiteApp () {
+            return window.webkit && window.webkit.messageHandlers
         }
     },
     created () {
@@ -90,6 +102,11 @@ export default {
     methods: {
         home () {
             this.$router.push('/')
+        },
+        openAppStorePage () {
+            window.webkit.messageHandlers.openAppStore.postMessage({
+            "message": 'openAppStore'
+            })
         }
     }
 }

@@ -22,10 +22,16 @@
 }
 
 .mb-negative-1 {
-    margin-bottom: -0.25rem;
+    margin-bottom: -0.25rem !important;
 }
 .mb-negative-2 {
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.5rem !important;
+}
+.mb-negative-5 {
+    margin-bottom: -1.5rem !important;
+}
+.mb-negative-6 {
+    margin-bottom: -3rem !important;
 }
 
 .mt-negative-1 {

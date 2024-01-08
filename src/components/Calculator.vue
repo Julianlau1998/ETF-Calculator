@@ -8,6 +8,7 @@
             :max="5000000"
             :step="100"
             @changed="setStartCapital"
+            @click="addClick"
         />
         <br>
         <br>
@@ -19,6 +20,7 @@
             :max="7000"
             :step="10"
             @changed="setMonthly"
+            @click="addClick"
         />
         <br>
         <br>
@@ -30,6 +32,7 @@
             :max="70"
             :step="1"
             @changed="setYears"
+            @click="addClick"
         />
         <br>
         <br>
@@ -41,6 +44,7 @@
             :max="50"
             :step="0.1"
             @changed="setInterest"
+            @click="addClick"
         />
         <br>
         <br>
@@ -51,6 +55,13 @@
             <br>
             <span class="is-fourth mt-6"> {{ endCapital }}{{currency}} </span>
         </h1>
+        <button
+          v-if="iosLiteApp"
+          @click="openAppStorePage"
+          class="button is-ads-button is-border-secondary mt-5 mb-negative-5"
+        >
+          Get Rid Of Ads
+        </button>
   </div>
 </template>
 
@@ -93,6 +104,9 @@ export default {
                 current = newValue
             }
             return current !== Infinity ? (Math.round(current * 100)/100).toFixed(2) : NaN
+        },
+        iosLiteApp () {
+            return window.webkit && window.webkit.messageHandlers
         }
     },
     watch: {
@@ -139,6 +153,14 @@ export default {
         },
         setInterest (val) {
             this.interest = val
+        },
+        addClick () {
+            this.$emit('addClick')
+        },
+        openAppStorePage () {
+            window.webkit.messageHandlers.openAppStore.postMessage({
+              "message": 'openAppStore'
+            })
         }
     }
 }
