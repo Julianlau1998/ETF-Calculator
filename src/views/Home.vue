@@ -64,7 +64,7 @@ export default {
         this.clicks += 1
         localStorage.setItem('clicks', this.clicks)
         if(this.clicks >= 8) {
-          //this.showInterstitial()
+          this.showInterstitial()
           localStorage.setItem('clicks', 0)
           this.clicks = 0
         }
